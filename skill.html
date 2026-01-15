@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Atyla Azfa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: { 'neo-bg': '#f4f4f0', 'neo-main': '#a3e635', 'neo-accent': '#c084fc', 'neo-dark': '#1c1917' },
+                    boxShadow: { 'neo': '5px 5px 0px 0px rgba(0,0,0,1)', 'neo-hover': '8px 8px 0px 0px rgba(0,0,0,1)' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neo-bg text-neo-dark font-sans">
+    <nav class="border-b-4 border-black bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-2xl font-bold uppercase tracking-tighter">ATYLA.AZFA</a>
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-sm uppercase">
+                <a href="about.html" class="hover:text-neo-accent hover:underline decoration-4 decoration-neo-main underline-offset-4">About</a>
+                <a href="education.html" class="hover:text-neo-accent hover:underline decoration-4 decoration-neo-main underline-offset-4">Education</a>
+                <a href="experience.html" class="hover:text-neo-accent hover:underline decoration-4 decoration-neo-main underline-offset-4">Experience</a>
+                <a href="skill.html" class="bg-neo-main border-2 border-black px-2 shadow-[2px_2px_0px_0px_black]">Skill</a>
+                <a href="projects.html" class="hover:text-neo-accent hover:underline decoration-4 decoration-neo-main underline-offset-4">Project</a>
+                <a href="blog.html" class="hover:text-neo-accent hover:underline decoration-4 decoration-neo-main underline-offset-4">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <h1 class="text-5xl font-bold mb-12 uppercase border-b-4 border-black pb-4 text-center">Tech Stack</h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+            
+            <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-neo-main transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">PHP</h3>
+                <p class="text-sm mt-2">Laravel, Native</p>
+            </div>
+             <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-neo-accent hover:text-white transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">DART</h3>
+                <p class="text-sm mt-2">Flutter Mobile</p>
+            </div>
+             <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-blue-300 transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">PYTHON</h3>
+                <p class="text-sm mt-2">Pandas, Scikit-Learn</p>
+            </div>
+             <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-yellow-300 transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">DATABASE</h3>
+                <p class="text-sm mt-2">PostgreSQL, MySQL</p>
+            </div>
+             <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-red-300 transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">DEVOPS</h3>
+                <p class="text-sm mt-2">Docker, Jenkins</p>
+            </div>
+             <div class="bg-white border-2 border-black p-6 shadow-neo hover:bg-gray-300 transition-colors group cursor-crosshair">
+                <h3 class="text-2xl font-bold group-hover:translate-x-1 transition-transform">TOOLS</h3>
+                <p class="text-sm mt-2">Git, Linux, VSCode</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
