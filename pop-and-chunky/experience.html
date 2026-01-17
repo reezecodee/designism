@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { 'pop-bg': '#ffdecc', 'pop-accent': '#ff6b6b', 'pop-text': '#334155' },
+                    boxShadow: { 'card': '12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05)', 'btn': '6px 6px 0px rgba(0, 0, 0, 0.1)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffdecc;
+            color: #334155;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: radial-gradient(#fff 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .pop-card {
+            background: #ffffff;
+            border-radius: 32px;
+            border: 4px solid #fff;
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #fff0e6;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <nav class="sticky top-6 z-50 px-6 mb-6">
+        <div
+            class="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm border-4 border-white rounded-[24px] shadow-sm p-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="px-6 py-2 bg-pop-bg rounded-2xl font-extrabold text-xl tracking-tight text-slate-700 border-2 border-white">PORTFOLIO</a>
+            <div class="hidden md:flex flex-wrap justify-center gap-2 text-sm uppercase">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="experience.html"
+                    class="bg-pop-accent text-white rounded-2xl px-4 py-2 font-bold shadow-md">Experience</a>
+                <a href="skill.html" class="nav-link">Skill</a>
+                <a href="projects.html" class="nav-link">Project</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <h1 class="text-4xl font-extrabold mb-10 text-center text-slate-800">PENGALAMAN KERJA</h1>
+
+        <div class="space-y-8">
+            <div class="pop-card p-8 relative transition transform hover:-translate-y-2">
+                <div
+                    class="absolute -top-3 -right-3 bg-pop-accent text-white border-2 border-white px-4 py-1 rounded-full font-bold text-xs shadow-sm transform rotate-3">
+                    CURRENT JOB</div>
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-800">Freelance Developer</h2>
+                    <span class="text-sm font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded-full mt-2 md:mt-0">2024
+                        - Sekarang</span>
+                </div>
+                <p class="text-lg font-bold text-pop-accent mb-6">DISKOMINFO (Part-time)</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 font-medium">
+                    <li>Mengembangkan aplikasi internal menggunakan <strong>Flutter</strong> dan
+                        <strong>Laravel</strong>.</li>
+                    <li>Melakukan maintenance server dan optimasi database kependudukan.</li>
+                    <li>Integrasi API pihak ketiga untuk layanan publik.</li>
+                </ul>
+            </div>
+
+            <div class="pop-card p-8 transition transform hover:-translate-y-2">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-800">PKL Team Lead</h2>
+                    <span
+                        class="text-sm font-bold bg-slate-100 text-slate-500 px-3 py-1 rounded-full mt-2 md:mt-0">2025</span>
+                </div>
+                <p class="text-lg font-bold text-pop-accent mb-6">Desa Kaputihan</p>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 font-medium">
+                    <li>Membangun Sistem Informasi Geografis (GIS) untuk pemetaan potensi desa.</li>
+                    <li>Melakukan sosialisasi digitalisasi administrasi desa kepada perangkat desa.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

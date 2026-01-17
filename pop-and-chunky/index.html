@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { 'pop-bg': '#ffdecc', 'pop-accent': '#ff6b6b', 'pop-text': '#334155' },
+                    boxShadow: {
+                        'card': '12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05)',
+                        'btn': '6px 6px 0px rgba(0, 0, 0, 0.1)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffdecc;
+            color: #334155;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: radial-gradient(#fff 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .pop-card {
+            background: #ffffff;
+            border-radius: 32px;
+            border: 4px solid #fff;
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .pop-btn {
+            background: #ff6b6b;
+            color: white;
+            border: 3px solid white;
+            border-radius: 20px;
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s;
+            font-weight: 800;
+        }
+
+        .pop-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pop-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .pop-btn-white {
+            background: #ffffff;
+            color: #334155;
+            border: 3px solid #ffffff;
+            border-radius: 20px;
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.05);
+            font-weight: 800;
+            transition: all 0.2s;
+        }
+
+        .pop-btn-white:hover {
+            transform: translateY(-2px);
+            background-color: #f8fafc;
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #fff0e6;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <nav class="sticky top-6 z-50 px-6 mb-6">
+        <div
+            class="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm border-4 border-white rounded-[24px] shadow-sm p-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="px-6 py-2 bg-pop-bg rounded-2xl font-extrabold text-xl tracking-tight text-slate-700 border-2 border-white">PORTFOLIO</a>
+            <div class="hidden md:flex flex-wrap justify-center gap-2 text-sm uppercase">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="skill.html" class="nav-link">Skill</a>
+                <a href="projects.html" class="nav-link">Project</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-6 relative">
+        <div class="max-w-4xl w-full text-center relative z-10">
+            <div class="inline-block transform -rotate-2 hover:rotate-0 transition duration-300 mb-8">
+                <div
+                    class="bg-pop-accent text-white border-4 border-white px-6 py-2 rounded-2xl font-extrabold text-lg shadow-btn">
+                    PORTFOLIO 2026 ✨</div>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight tracking-tight text-slate-800">
+                BACKEND <br> <span class="text-white"
+                    style="-webkit-text-stroke: 3px #334155; text-shadow: 4px 4px 0px rgba(0,0,0,0.1);">DEVELOPER</span>
+            </h1>
+            <div class="pop-card p-6 md:p-8 max-w-2xl mx-auto mb-10">
+                <p class="text-xl md:text-2xl font-bold text-slate-600">
+                    Halo, saya <span class="text-pop-accent">Portfolio</span>. <br> Mahasiswa Universitas BSI & Tech
+                    Enthusiast.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="about.html" class="pop-btn px-10 py-5 text-xl flex items-center justify-center gap-2">👋
+                    TENTANG SAYA</a>
+                <a href="projects.html"
+                    class="pop-btn-white px-10 py-5 text-xl flex items-center justify-center gap-2">🚀 LIHAT KARYA</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

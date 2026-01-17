@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Jenkins untuk Laravel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { 'pop-bg': '#ffdecc', 'pop-accent': '#ff6b6b', 'pop-text': '#334155' },
+                    boxShadow: { 'card': '12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05)', 'btn': '6px 6px 0px rgba(0, 0, 0, 0.1)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffdecc;
+            color: #334155;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: radial-gradient(#fff 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .pop-card {
+            background: #ffffff;
+            border-radius: 32px;
+            border: 4px solid #fff;
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #fff0e6;
+            color: #ff6b6b;
+        }
+
+        /* Artikel Style */
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #334155;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #475569;
+        }
+
+        .article-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Terminal Code Block */
+        .article-content pre {
+            background: #1e293b;
+            color: #a3e635;
+            padding: 1.5rem;
+            border-radius: 20px;
+            border: 4px solid white;
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <nav class="sticky top-6 z-50 px-6 mb-6">
+        <div
+            class="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm border-4 border-white rounded-[24px] shadow-sm p-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="px-6 py-2 bg-pop-bg rounded-2xl font-extrabold text-xl tracking-tight text-slate-700 border-2 border-white">PORTFOLIO</a>
+            <div class="hidden md:flex flex-wrap justify-center gap-2 text-sm uppercase">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="skill.html" class="nav-link">Skill</a>
+                <a href="projects.html" class="nav-link">Project</a>
+                <a href="blog.html" class="bg-pop-accent text-white rounded-2xl px-4 py-2 font-bold shadow-md">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+
+        <a href="blog.html"
+            class="inline-flex items-center font-bold text-pop-accent hover:underline mb-8 bg-white px-4 py-2 rounded-full shadow-sm">
+            &larr; KEMBALI KE LIST BLOG
+        </a>
+
+        <header class="mb-10 text-center">
+            <div class="flex justify-center gap-2 mb-4">
+                <span
+                    class="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full font-bold text-xs border-2 border-white">DEVOPS</span>
+                <span
+                    class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full font-bold text-xs border-2 border-white">JENKINS</span>
+            </div>
+            <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6 text-slate-800">
+                Cara Setup CI/CD Pipeline Jenkins untuk Project Laravel
+            </h1>
+            <div class="flex justify-center items-center gap-4 text-sm font-bold text-slate-500">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-slate-200 rounded-full overflow-hidden border-2 border-white">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio" alt="Portfolio">
+                    </div>
+                    <span>Portfolio</span>
+                </div>
+                <span>|</span>
+                <span>14 JAN 2026</span>
+            </div>
+        </header>
+
+        <article class="article-content pop-card p-6 md:p-10">
+            <p>
+                Deployment manual itu melelahkan. Bayangkan setiap kali ada update kecil di backend Laravel, kita harus
+                login SSH, `git pull`, jalankan migrasi, dan restart service. Di artikel ini, saya akan berbagi
+                pengalaman setup <strong>Jenkins</strong> untuk mengotomatisasi proses tersebut.
+            </p>
+
+            <h2>1. Persiapan Server</h2>
+            <p>
+                Pastikan server VPS (saya pakai Ubuntu 22.04) sudah terinstall Java, karena Jenkins berjalan di atas
+                Java Runtime Environment (JRE).
+            </p>
+            <pre>
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+</pre>
+
+            <h2>2. Install Jenkins</h2>
+            <p>
+                Selanjutnya, kita tambahkan repository Jenkins ke sistem dan lakukan instalasi. Jangan lupa untuk
+                membuka port 8080 di firewall jika belum dibuka.
+            </p>
+            <pre>
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+sudo apt-get install jenkins
+sudo systemctl start jenkins
+</pre>
+
+            <h2>3. Konfigurasi Pipeline</h2>
+            <p>
+                Di dashboard Jenkins, buat "New Item" > "Pipeline". Di bagian konfigurasi script, kita bisa menggunakan
+                <code>Jenkinsfile</code>. Berikut adalah contoh script sederhana untuk Laravel:
+            </p>
+
+            <div class="bg-yellow-50 border-2 border-yellow-200 rounded-2xl p-6 mb-6">
+                <strong class="text-yellow-700">💡 Catatan:</strong> <span class="text-yellow-800">Pastikan Anda sudah
+                    mengatur SSH Credentials di Jenkins agar bisa connect ke server production.</span>
+            </div>
+
+            <pre>
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'composer install --no-dev'
+                sh 'cp .env.example .env'
+                sh 'php artisan key:generate'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './vendor/bin/phpunit'
+            }
+        }
+    }
+}
+</pre>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Dengan setup ini, setiap kali saya push code ke GitHub, Jenkins akan otomatis menjalankan test. Jika
+                lolos, code siap dideploy. Ini menghemat waktu saya sekitar 15-20 menit per deployment.
+            </p>
+            <p>
+                Next, saya akan bahas cara setup Webhook agar trigger-nya otomatis!
+            </p>
+        </article>
+
+        <div
+            class="mt-12 bg-white rounded-[32px] p-8 border-4 border-white shadow-[12px_12px_0px_rgba(0,0,0,0.1)] flex flex-col md:flex-row gap-6 items-center">
+            <div
+                class="w-20 h-20 bg-slate-200 rounded-full border-4 border-white shadow-sm overflow-hidden flex-shrink-0">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio" alt="Portfolio">
+            </div>
+            <div>
+                <h3 class="text-xl font-bold mb-1 text-slate-800">Ditulis oleh Portfolio</h3>
+                <p class="font-medium text-slate-500 mb-3 text-sm">Mahasiswa BSI & Backend Enthusiast yang sedang
+                    belajar DevOps. Suka kopi dan coding di malam hari.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="text-sm font-bold text-pop-accent hover:underline">Instagram</a>
+                    <a href="#" class="text-sm font-bold text-pop-accent hover:underline">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { 'pop-bg': '#ffdecc', 'pop-accent': '#ff6b6b', 'pop-text': '#334155' },
+                    boxShadow: { 'card': '12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05)', 'btn': '6px 6px 0px rgba(0, 0, 0, 0.1)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ffdecc;
+            color: #334155;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: radial-gradient(#fff 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+
+        .pop-card {
+            background: #ffffff;
+            border-radius: 32px;
+            border: 4px solid #fff;
+            box-shadow: 12px 12px 0px rgba(0, 0, 0, 0.1), inset -6px -6px 0px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-link {
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: #fff0e6;
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col overflow-x-hidden">
+    <nav class="sticky top-6 z-50 px-6 mb-6">
+        <div
+            class="max-w-5xl mx-auto bg-white/90 backdrop-blur-sm border-4 border-white rounded-[24px] shadow-sm p-3 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="px-6 py-2 bg-pop-bg rounded-2xl font-extrabold text-xl tracking-tight text-slate-700 border-2 border-white">PORTFOLIO</a>
+            <div class="hidden md:flex flex-wrap justify-center gap-2 text-sm uppercase">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="education.html" class="nav-link">Education</a>
+                <a href="experience.html" class="nav-link">Experience</a>
+                <a href="skill.html"
+                    class="bg-pop-accent text-white rounded-2xl px-4 py-2 font-bold shadow-md">Skill</a>
+                <a href="projects.html" class="nav-link">Project</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+        <h1 class="text-4xl font-extrabold mb-10 text-center text-slate-800">TECH STACK</h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
+            <div class="pop-card p-6 hover:bg-indigo-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">PHP</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">Laravel, Native</p>
+            </div>
+            <div class="pop-card p-6 hover:bg-blue-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">DART</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">Flutter Mobile</p>
+            </div>
+            <div class="pop-card p-6 hover:bg-yellow-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">PYTHON</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">Pandas, Scikit</p>
+            </div>
+            <div class="pop-card p-6 hover:bg-green-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">DATABASE</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">PostgreSQL, MySQL</p>
+            </div>
+            <div class="pop-card p-6 hover:bg-red-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">DEVOPS</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">Docker, Jenkins</p>
+            </div>
+            <div class="pop-card p-6 hover:bg-gray-50 transition-colors group cursor-pointer">
+                <h3 class="text-2xl font-extrabold group-hover:scale-110 transition-transform">TOOLS</h3>
+                <p class="text-sm mt-2 font-bold text-slate-400">Git, Linux, VSCode</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
