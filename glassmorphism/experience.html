@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: { 'emerald-primary': '#10b981' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(52, 211, 153, 0.3) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.3) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: #1f2937;
+            min-height: 100vh;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.7);
+            border-color: #10b981;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: -1;
+            animation: float 10s infinite ease-in-out;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, -20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans flex flex-col min-h-screen">
+
+    <div class="blob w-80 h-80 bg-green-300 opacity-50 bottom-[-50px] right-[-50px]"></div>
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 flex justify-center">
+        <div
+            class="glass-panel rounded-full px-8 py-4 flex flex-col md:flex-row items-center gap-6 w-full max-w-5xl justify-between">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tight text-gray-800 hover:text-emerald-600 transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-2 text-sm font-semibold text-gray-600">
+                <a href="about.html"
+                    class="px-3 py-1 hover:text-emerald-600 hover:bg-white/50 rounded-lg transition-all">About</a>
+                <a href="education.html"
+                    class="px-3 py-1 hover:text-emerald-600 hover:bg-white/50 rounded-lg transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-3 py-1 text-emerald-600 bg-white/50 rounded-lg shadow-sm">Experience</a>
+                <a href="skill.html"
+                    class="px-3 py-1 hover:text-emerald-600 hover:bg-white/50 rounded-lg transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-3 py-1 hover:text-emerald-600 hover:bg-white/50 rounded-lg transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-3 py-1 hover:text-emerald-600 hover:bg-white/50 rounded-lg transition-all">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="w-full max-w-4xl mx-auto px-4 relative z-10 mt-32 mb-12">
+        <div class="glass-panel p-8 md:p-12 rounded-3xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-12 text-center text-gray-900">Pengalaman Kerja</h1>
+
+            <div class="space-y-8">
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-emerald-400 w-24 h-24 opacity-20 blur-2xl rounded-full"></div>
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                        <h2 class="text-3xl font-bold text-gray-800">Freelance Developer</h2>
+                        <span
+                            class="font-mono text-xs font-bold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full border border-emerald-200 mt-2 md:mt-0">2024
+                            - Sekarang</span>
+                    </div>
+                    <p class="text-xl font-bold text-emerald-600 mb-6">DISKOMINFO (Part-time)</p>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-500 font-bold">✓</span>
+                            <span>Mengembangkan aplikasi internal menggunakan <strong>Flutter</strong> dan
+                                <strong>Laravel</strong>.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-500 font-bold">✓</span>
+                            <span>Melakukan maintenance server dan optimasi database kependudukan.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-500 font-bold">✓</span>
+                            <span>Integrasi API pihak ketiga untuk layanan publik.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl relative overflow-hidden group">
+                    <div class="flex flex-col md:flex-row justify-between md:items-center mb-4">
+                        <h2 class="text-3xl font-bold text-gray-800">PKL Team Lead</h2>
+                        <span
+                            class="font-mono text-xs font-bold bg-white/60 text-gray-600 px-3 py-1 rounded-full border border-gray-200 mt-2 md:mt-0">2025</span>
+                    </div>
+                    <p class="text-xl font-bold text-emerald-600 mb-6">Desa Kaputihan</p>
+                    <ul class="space-y-3 text-lg text-gray-600">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-500 font-bold">✓</span>
+                            <span>Membangun Sistem Informasi Geografis (GIS) untuk pemetaan potensi desa.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="mr-3 text-emerald-500 font-bold">✓</span>
+                            <span>Melakukan sosialisasi digitalisasi administrasi desa kepada perangkat desa.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
