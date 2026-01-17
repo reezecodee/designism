@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: {
+                        'neu-bg': '#e0e5ec',
+                        'neu-text': '#4a5568',
+                        'neu-accent': '#6d28d9',
+                    },
+                    boxShadow: {
+                        'neu': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'neu-pressed': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-neu-bg text-neu-text font-sans min-h-screen">
+    <nav class="sticky top-4 z-50 px-4 mb-8">
+        <div
+            class="max-w-7xl mx-auto bg-neu-bg shadow-neu rounded-2xl px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tighter text-neu-text hover:text-neu-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-sm uppercase text-gray-600">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Skill</a>
+                <a href="projects.html" class="px-4 py-2 rounded-full text-neu-accent shadow-neu-pressed">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold uppercase text-neu-text mb-4">Selected Works</h1>
+            <div class="h-1 w-24 bg-neu-accent mx-auto rounded-full shadow-neu-pressed"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <article
+                class="bg-neu-bg rounded-3xl p-6 shadow-neu hover:shadow-neu-pressed transition-all duration-300 flex flex-col h-full">
+                <div class="h-48 rounded-2xl overflow-hidden mb-6 shadow-neu-pressed">
+                    <img src="https://placehold.co/600x400/e0e5ec/6d28d9?text=GIS+Desa" alt="GIS"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-500">
+                </div>
+
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-2xl font-bold text-gray-700">GIS Desa Kaputihan</h3>
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-neu-accent bg-neu-bg px-2 py-1 rounded-full shadow-neu-pressed">Laravel</span>
+                </div>
+
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Sistem pemetaan potensi desa & administrasi
+                    kependudukan.</p>
+
+                <a href="#"
+                    class="block w-full bg-neu-bg text-neu-text text-center py-3 font-bold rounded-full shadow-neu hover:text-neu-accent active:shadow-neu-pressed transition-all">VIEW
+                    DETAILS</a>
+            </article>
+
+            <article
+                class="bg-neu-bg rounded-3xl p-6 shadow-neu hover:shadow-neu-pressed transition-all duration-300 flex flex-col h-full">
+                <div class="h-48 rounded-2xl overflow-hidden mb-6 shadow-neu-pressed">
+                    <img src="https://placehold.co/600x400/e0e5ec/6d28d9?text=Internal+App" alt="Internal"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-500">
+                </div>
+
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-2xl font-bold text-gray-700">Diskominfo App</h3>
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-neu-accent bg-neu-bg px-2 py-1 rounded-full shadow-neu-pressed">Flutter</span>
+                </div>
+
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Aplikasi mobile manajemen tugas pegawai honorer/kontrak.
+                </p>
+
+                <a href="#"
+                    class="block w-full bg-neu-bg text-neu-text text-center py-3 font-bold rounded-full shadow-neu hover:text-neu-accent active:shadow-neu-pressed transition-all">VIEW
+                    DETAILS</a>
+            </article>
+
+            <article
+                class="bg-neu-bg rounded-3xl p-6 shadow-neu hover:shadow-neu-pressed transition-all duration-300 flex flex-col h-full">
+                <div class="h-48 rounded-2xl overflow-hidden mb-6 shadow-neu-pressed">
+                    <img src="https://placehold.co/600x400/e0e5ec/6d28d9?text=ML+Model" alt="ML"
+                        class="w-full h-full object-cover opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-500">
+                </div>
+
+                <div class="flex justify-between items-start mb-2">
+                    <h3 class="text-2xl font-bold text-gray-700">Prediction Model</h3>
+                    <span
+                        class="text-[10px] font-bold uppercase tracking-wider text-gray-500 bg-neu-bg px-2 py-1 rounded-full shadow-neu-pressed">Python</span>
+                </div>
+
+                <p class="text-sm text-gray-500 mb-6 flex-grow">Linear Regression Model untuk analisis dataset Kaggle.
+                </p>
+
+                <a href="#"
+                    class="block w-full bg-neu-bg text-neu-text text-center py-3 font-bold rounded-full shadow-neu hover:text-neu-accent active:shadow-neu-pressed transition-all">VIEW
+                    DETAILS</a>
+            </article>
+
+        </div>
+    </main>
+</body>
+
+</html>

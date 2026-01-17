@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Jenkins untuk Laravel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: {
+                        'neu-bg': '#e0e5ec',
+                        'neu-text': '#4a5568',
+                        'neu-accent': '#6d28d9',
+                    },
+                    boxShadow: {
+                        'neu': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'neu-pressed': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .article-content h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            color: #4a5568;
+        }
+
+        .article-content ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #4a5568;
+        }
+
+        .article-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Neumorphic Code Block: Inset Shadow */
+        .article-content pre {
+            background: #e0e5ec;
+            color: #6d28d9;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: inset 6px 6px 10px 0 rgba(163, 177, 198, 0.7), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.8);
+            overflow-x: auto;
+            margin-bottom: 2rem;
+            font-family: monospace;
+        }
+
+        .article-content code {
+            font-weight: bold;
+            color: #6d28d9;
+        }
+    </style>
+</head>
+
+<body class="bg-neu-bg text-neu-text font-sans min-h-screen">
+
+    <nav class="sticky top-4 z-50 px-4 mb-8">
+        <div
+            class="max-w-7xl mx-auto bg-neu-bg shadow-neu rounded-2xl px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html"
+                class="text-2xl font-bold tracking-tighter text-neu-text hover:text-neu-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-sm uppercase text-gray-600">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Project</a>
+                <a href="blog.html" class="px-4 py-2 rounded-full text-neu-accent shadow-neu-pressed">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+
+        <a href="blog.html"
+            class="inline-flex items-center font-bold text-gray-500 hover:text-neu-accent mb-8 group transition-colors">
+            <span
+                class="w-10 h-10 rounded-full bg-neu-bg shadow-neu flex items-center justify-center mr-3 group-hover:shadow-neu-pressed transition-all">
+                &larr;
+            </span>
+            KEMBALI KE LIST BLOG
+        </a>
+
+        <header class="mb-10 pb-10 border-b border-gray-300">
+            <div class="flex gap-3 mb-6">
+                <span
+                    class="bg-neu-bg text-neu-accent text-xs font-bold px-4 py-2 rounded-full shadow-neu-pressed">DEVOPS</span>
+                <span class="bg-neu-bg text-gray-500 text-xs font-bold px-4 py-2 rounded-full shadow-neu">JENKINS</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-800">
+                Cara Setup CI/CD Pipeline Jenkins untuk Project Laravel
+            </h1>
+            <div class="flex items-center gap-4 text-sm font-bold text-gray-500">
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 rounded-full overflow-hidden shadow-neu-pressed border-2 border-neu-bg">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio&backgroundColor=e0e5ec"
+                            alt="Portfolio">
+                    </div>
+                    <span>Portfolio</span>
+                </div>
+                <span>&bull;</span>
+                <span>14 JAN 2026</span>
+            </div>
+        </header>
+
+        <article class="article-content bg-neu-bg rounded-3xl p-8 md:p-12 shadow-neu mb-12">
+            <p>
+                Deployment manual itu melelahkan. Bayangkan setiap kali ada update kecil di backend Laravel, kita harus
+                login SSH, `git pull`, jalankan migrasi, dan restart service. Di artikel ini, saya akan berbagi
+                pengalaman setup <strong>Jenkins</strong> untuk mengotomatisasi proses tersebut.
+            </p>
+
+            <h2>1. Persiapan Server</h2>
+            <p>
+                Pastikan server VPS (saya pakai Ubuntu 22.04) sudah terinstall Java, karena Jenkins berjalan di atas
+                Java Runtime Environment (JRE).
+            </p>
+            <pre>
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+</pre>
+
+            <h2>2. Install Jenkins</h2>
+            <p>
+                Selanjutnya, kita tambahkan repository Jenkins ke sistem dan lakukan instalasi. Jangan lupa untuk
+                membuka port 8080 di firewall jika belum dibuka.
+            </p>
+            <pre>
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+sudo apt-get install jenkins
+sudo systemctl start jenkins
+</pre>
+
+            <h2>3. Konfigurasi Pipeline</h2>
+            <p>
+                Di dashboard Jenkins, buat "New Item" > "Pipeline". Di bagian konfigurasi script, kita bisa menggunakan
+                <code>Jenkinsfile</code>. Berikut adalah contoh script sederhana untuk Laravel:
+            </p>
+
+            <div class="bg-neu-bg rounded-2xl p-6 mb-6 shadow-neu-pressed border-l-4 border-neu-accent">
+                <strong class="text-neu-accent">Catatan:</strong> Pastikan Anda sudah mengatur SSH Credentials di
+                Jenkins agar bisa connect ke server production.
+            </div>
+
+            <pre>
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'composer install --no-dev'
+                sh 'cp .env.example .env'
+                sh 'php artisan key:generate'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './vendor/bin/phpunit'
+            }
+        }
+    }
+}
+</pre>
+
+            <h2>Kesimpulan</h2>
+            <p>
+                Dengan setup ini, setiap kali saya push code ke GitHub, Jenkins akan otomatis menjalankan test. Jika
+                lolos, code siap dideploy. Ini menghemat waktu saya sekitar 15-20 menit per deployment.
+            </p>
+        </article>
+
+        <div
+            class="bg-neu-bg rounded-3xl p-8 shadow-neu flex flex-col md:flex-row gap-8 items-center text-center md:text-left">
+            <div class="w-24 h-24 rounded-full overflow-hidden shadow-neu-pressed border-4 border-neu-bg flex-shrink-0">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio&backgroundColor=e0e5ec"
+                    alt="Portfolio" class="w-full h-full object-cover">
+            </div>
+            <div>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800">Ditulis oleh Portfolio</h3>
+                <p class="font-medium mb-6 text-gray-600">Mahasiswa BSI & Backend Enthusiast yang sedang belajar DevOps.
+                    Suka kopi dan coding di malam hari.</p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#"
+                        class="px-6 py-2 rounded-full font-bold text-sm bg-neu-bg text-gray-600 shadow-neu hover:text-neu-accent hover:shadow-neu-pressed transition-all">Instagram</a>
+                    <a href="#"
+                        class="px-6 py-2 rounded-full font-bold text-sm bg-neu-bg text-gray-600 shadow-neu hover:text-neu-accent hover:shadow-neu-pressed transition-all">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>

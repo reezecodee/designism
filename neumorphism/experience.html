@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: { 
+                        'neu-bg': '#e0e5ec', 
+                        'neu-text': '#4a5568',
+                        'neu-accent': '#6d28d9',
+                    },
+                    boxShadow: { 
+                        'neu': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'neu-pressed': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neu-bg text-neu-text font-sans min-h-screen">
+    <nav class="sticky top-4 z-50 px-4 mb-8">
+        <div class="max-w-7xl mx-auto bg-neu-bg shadow-neu rounded-2xl px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter text-neu-text hover:text-neu-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-4 font-bold text-sm uppercase text-gray-600">
+                <a href="about.html" class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">About</a>
+                <a href="education.html" class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Education</a>
+                <a href="experience.html" class="px-4 py-2 rounded-full text-neu-accent shadow-neu-pressed">Experience</a>
+                <a href="skill.html" class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Skill</a>
+                <a href="projects.html" class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Project</a>
+                <a href="blog.html" class="px-4 py-2 rounded-full hover:text-neu-accent hover:shadow-neu-pressed transition-all duration-200">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold uppercase text-neu-text mb-4">Pengalaman Kerja</h1>
+            <div class="h-1 w-24 bg-neu-accent mx-auto rounded-full shadow-neu-pressed"></div>
+        </div>
+
+        <div class="space-y-8">
+            <div class="bg-neu-bg rounded-3xl p-8 shadow-neu relative hover:shadow-neu-pressed transition-all duration-300">
+                <div class="absolute -top-4 -right-2 bg-neu-bg text-neu-accent border border-gray-200 px-4 py-1 text-xs font-bold rounded-full shadow-neu">CURRENT JOB</div>
+                
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
+                    <h2 class="text-3xl font-bold text-gray-700">Freelance Developer</h2>
+                    <span class="px-4 py-1 rounded-full text-sm font-bold text-gray-500 shadow-neu-pressed bg-neu-bg">2024 - Sekarang</span>
+                </div>
+                
+                <p class="text-xl font-bold text-neu-accent mb-6">DISKOMINFO (Part-time)</p>
+                <ul class="list-disc list-inside space-y-3 text-lg text-gray-600 marker:text-neu-accent">
+                    <li>Mengembangkan aplikasi internal menggunakan <strong>Flutter</strong> dan <strong>Laravel</strong>.</li>
+                    <li>Melakukan maintenance server dan optimasi database kependudukan.</li>
+                    <li>Integrasi API pihak ketiga untuk layanan publik.</li>
+                </ul>
+            </div>
+
+            <div class="bg-neu-bg rounded-3xl p-8 shadow-neu hover:shadow-neu-pressed transition-all duration-300">
+                <div class="flex flex-col md:flex-row justify-between md:items-center mb-4 gap-2">
+                    <h2 class="text-3xl font-bold text-gray-700">PKL Team Lead</h2>
+                    <span class="px-4 py-1 rounded-full text-sm font-bold text-gray-500 shadow-neu-pressed bg-neu-bg">2025</span>
+                </div>
+                
+                <p class="text-xl font-bold text-neu-accent mb-6">Desa Kaputihan</p>
+                <ul class="list-disc list-inside space-y-3 text-lg text-gray-600 marker:text-neu-accent">
+                    <li>Membangun Sistem Informasi Geografis (GIS) untuk pemetaan potensi desa.</li>
+                    <li>Melakukan sosialisasi digitalisasi administrasi desa kepada perangkat desa.</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
