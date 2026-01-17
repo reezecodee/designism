@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Desain Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f3f5f9;
+        }
+
+        /* STYLE 1: SOFT MATTE (Lembut, seperti karet) */
+        .style-1 {
+            background: #f3f5f9;
+            color: #64748b;
+            border-radius: 30px;
+            box-shadow:
+                20px 20px 60px #cfd3da,
+                -20px -20px 60px #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-style-1 {
+            background: #f3f5f9;
+            box-shadow: 6px 6px 10px #cfd3da, -6px -6px 10px #ffffff;
+            color: #6366f1;
+        }
+
+        .btn-style-1:active {
+            box-shadow: inset 4px 4px 8px #cfd3da, inset -4px -4px 8px #ffffff;
+        }
+
+        /* STYLE 2: GLOSSY PLASTIC (Mengkilap, seperti permen/keramik) */
+        .style-2 {
+            background: #ffffff;
+            border-radius: 30px;
+            /* Shadow berlapis untuk efek glossy */
+            box-shadow:
+                35px 35px 70px rgba(190, 190, 200, 0.3),
+                -35px -35px 70px rgba(255, 255, 255, 0.8),
+                inset -5px -5px 15px rgba(190, 190, 200, 0.1),
+                inset 5px 5px 15px rgba(255, 255, 255, 1);
+        }
+
+        .btn-style-2 {
+            background: linear-gradient(145deg, #6366f1, #4f46e5);
+            color: white;
+            box-shadow:
+                10px 10px 20px rgba(99, 102, 241, 0.3),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.4);
+            /* Highlight kilap */
+        }
+
+        /* STYLE 3: CARTOON / POP (Tegas, background berwarna) */
+        .bg-style-3 {
+            background-color: #ffdecc;
+        }
+
+        /* Peach Background */
+        .style-3 {
+            background: #ffffff;
+            border-radius: 24px;
+            /* Shadow Drop keras + Border tebal */
+            box-shadow:
+                12px 12px 0px rgba(0, 0, 0, 0.1),
+                /* Hard Shadow */
+                inset -8px -8px 0px rgba(0, 0, 0, 0.05);
+            /* Tebal di dalam */
+            border: 2px solid #fff;
+        }
+
+        .btn-style-3 {
+            background: #ff6b6b;
+            color: white;
+            border: 2px solid white;
+            box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-style-3:active {
+            transform: translate(4px, 4px);
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen p-10 flex flex-col gap-10 items-center justify-center">
+
+    <h1 class="text-3xl font-bold text-slate-700 mb-4">Mana yang "Gue Banget"?</h1>
+
+    <div class="w-full max-w-md p-8 style-1 text-center">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block">Opsi Nomor 1</span>
+        <h2 class="text-2xl font-bold text-slate-700 mb-2">Soft Matte Clay</h2>
+        <p class="mb-6 text-sm">Warnanya nyatu sama background (abu-abu muda). Bayangannya lembut banget. Terasa 'empuk'
+            tapi kalem.</p>
+        <button class="px-6 py-3 rounded-xl font-bold btn-style-1 transition transform hover:-translate-y-1">
+            Pilih Nomor 1
+        </button>
+    </div>
+
+    <div class="w-full max-w-md p-8 style-2 text-center relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-24 h-24 bg-blue-100 rounded-full blur-2xl opacity-50"></div>
+
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-2 block relative z-10">Opsi Nomor
+            2</span>
+        <h2 class="text-2xl font-bold text-slate-800 mb-2 relative z-10">Glossy / Ceramic</h2>
+        <p class="mb-6 text-sm text-slate-500 relative z-10">Background putih bersih. Ada efek kilap (glossy) di
+            pinggirannya. Terasa lebih premium & modern.</p>
+        <button class="px-6 py-3 rounded-xl font-bold btn-style-2 transition transform hover:scale-105 relative z-10">
+            Pilih Nomor 2
+        </button>
+    </div>
+
+    <div class="w-full max-w-md p-8 bg-style-3 rounded-[40px] flex justify-center items-center">
+        <div class="style-3 w-full p-8 text-center">
+            <span class="text-xs font-bold text-orange-400 uppercase tracking-widest mb-2 block">Opsi Nomor 3</span>
+            <h2 class="text-2xl font-bold text-slate-800 mb-2">Pop & Chunky</h2>
+            <p class="mb-6 text-sm text-slate-500">Style kartun/game. Background berwarna, kartu putih tebal. Shadow-nya
+                kasar (tidak blur). Playful.</p>
+            <button class="px-6 py-3 rounded-xl font-bold btn-style-3 transition">
+                Pilih Nomor 3
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>

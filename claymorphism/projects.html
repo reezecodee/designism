@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { primary: '#10b981', dark: '#064e3b', light: '#ecfdf5', gray: '#334155' } },
+                    boxShadow: {
+                        'clay-card': '12px 12px 24px rgba(16, 185, 129, 0.15), inset 6px 6px 12px rgba(255, 255, 255, 1), inset -6px -6px 12px rgba(16, 185, 129, 0.05)',
+                        'clay-btn': '8px 8px 16px rgba(16, 185, 129, 0.3), inset 4px 4px 8px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.1)',
+                        'clay-pressed': 'inset 4px 4px 8px rgba(0,0,0,0.2), inset -4px -4px 8px rgba(255,255,255,0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ecfdf5;
+            color: #1c1917;
+        }
+
+        .blob-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden relative min-h-screen flex flex-col">
+
+    <div class="blob-bg">
+        <div class="blob bg-emerald-200 w-96 h-96 rounded-full top-0 left-0"></div>
+        <div class="blob bg-teal-100 w-96 h-96 rounded-full bottom-0 right-0"></div>
+    </div>
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
+        <div
+            class="max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-full px-6 py-3 flex justify-between items-center shadow-clay-card border border-white/50">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-2xl bg-brand-primary flex items-center justify-center text-white font-extrabold text-xl shadow-clay-btn">
+                    P</div>
+                <span class="font-bold text-brand-dark text-lg hidden md:block tracking-tight">PORTFOLIO</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-bold text-brand-gray uppercase tracking-wide">
+                <a href="index.html" class="hover:text-brand-primary transition">Home</a>
+                <a href="about.html" class="hover:text-brand-primary transition">About</a>
+                <a href="education.html" class="hover:text-brand-primary transition">Education</a>
+                <a href="experience.html" class="hover:text-brand-primary transition">Experience</a>
+                <a href="skill.html" class="hover:text-brand-primary transition">Skill</a>
+                <a href="projects.html" class="text-brand-primary transition">Projects</a>
+                <a href="blog.html" class="hover:text-brand-primary transition">Blog</a>
+            </div>
+            <button class="md:hidden text-brand-primary font-bold">MENU</button>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto pt-40 pb-20 px-6 w-full">
+        <h1 class="text-center text-4xl font-extrabold text-brand-dark mb-12 uppercase tracking-tight">Selected Works
+        </h1>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div
+                class="group bg-white p-5 rounded-[35px] shadow-clay-card border border-white/50 hover:-translate-y-2 transition duration-300 flex flex-col h-full">
+                <div
+                    class="h-48 rounded-[25px] overflow-hidden mb-5 relative shadow-inner bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <img src="https://placehold.co/600x400/png?text=GIS"
+                        class="w-full h-full object-cover opacity-80 mix-blend-multiply">
+                    <div
+                        class="absolute bottom-4 right-4 bg-brand-primary/90 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                        LARAVEL</div>
+                </div>
+                <div class="px-2 flex-1 flex flex-col">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-2">GIS Desa Kaputihan</h3>
+                    <p class="text-sm text-brand-gray mb-6 leading-relaxed line-clamp-3 flex-grow">
+                        Sistem pemetaan potensi desa & administrasi kependudukan berbasis web.
+                    </p>
+                    <button
+                        class="w-full py-3 rounded-full bg-brand-primary text-white font-bold shadow-clay-btn hover:scale-105 active:shadow-clay-pressed active:scale-95 transition uppercase tracking-wide">VIEW
+                        DETAILS</button>
+                </div>
+            </div>
+
+            <div
+                class="group bg-white p-5 rounded-[35px] shadow-clay-card border border-white/50 hover:-translate-y-2 transition duration-300 flex flex-col h-full">
+                <div
+                    class="h-48 rounded-[25px] overflow-hidden mb-5 relative shadow-inner bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <img src="https://placehold.co/600x400/png?text=App"
+                        class="w-full h-full object-cover opacity-80 mix-blend-multiply">
+                    <div
+                        class="absolute bottom-4 right-4 bg-blue-500/90 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                        FLUTTER</div>
+                </div>
+                <div class="px-2 flex-1 flex flex-col">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Diskominfo App</h3>
+                    <p class="text-sm text-brand-gray mb-6 leading-relaxed line-clamp-3 flex-grow">
+                        Aplikasi mobile manajemen tugas pegawai honorer/kontrak secara realtime.
+                    </p>
+                    <button
+                        class="w-full py-3 rounded-full bg-brand-primary text-white font-bold shadow-clay-btn hover:scale-105 active:shadow-clay-pressed active:scale-95 transition uppercase tracking-wide">VIEW
+                        DETAILS</button>
+                </div>
+            </div>
+
+            <div
+                class="group bg-white p-5 rounded-[35px] shadow-clay-card border border-white/50 hover:-translate-y-2 transition duration-300 flex flex-col h-full">
+                <div
+                    class="h-48 rounded-[25px] overflow-hidden mb-5 relative shadow-inner bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <img src="https://placehold.co/600x400/png?text=ML"
+                        class="w-full h-full object-cover opacity-80 mix-blend-multiply">
+                    <div
+                        class="absolute bottom-4 right-4 bg-yellow-500/90 text-white px-3 py-1 rounded-full text-xs font-bold shadow-sm">
+                        PYTHON</div>
+                </div>
+                <div class="px-2 flex-1 flex flex-col">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Prediction Model</h3>
+                    <p class="text-sm text-brand-gray mb-6 leading-relaxed line-clamp-3 flex-grow">
+                        Linear Regression Model untuk analisis dataset Kaggle dan prediksi tren.
+                    </p>
+                    <button
+                        class="w-full py-3 rounded-full bg-brand-primary text-white font-bold shadow-clay-btn hover:scale-105 active:shadow-clay-pressed active:scale-95 transition uppercase tracking-wide">VIEW
+                        DETAILS</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Blog - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
+                    colors: { brand: { primary: '#10b981', dark: '#064e3b', light: '#ecfdf5', gray: '#334155' } },
+                    boxShadow: {
+                        'clay-card': '12px 12px 24px rgba(16, 185, 129, 0.15), inset 6px 6px 12px rgba(255, 255, 255, 1), inset -6px -6px 12px rgba(16, 185, 129, 0.05)',
+                        'clay-btn': '8px 8px 16px rgba(16, 185, 129, 0.3), inset 4px 4px 8px rgba(255, 255, 255, 0.4), inset -4px -4px 8px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #ecfdf5;
+            color: #1c1917;
+        }
+
+        .blob-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+
+        article h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #064e3b;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #334155;
+        }
+
+        article pre {
+            background: #1e293b;
+            color: #a7f3d0;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden relative min-h-screen flex flex-col">
+
+    <div class="blob-bg">
+        <div class="blob bg-emerald-200 w-96 h-96 rounded-full top-0 left-0"></div>
+        <div class="blob bg-teal-100 w-96 h-96 rounded-full bottom-0 right-0"></div>
+    </div>
+
+    <nav class="fixed top-6 left-0 right-0 z-50 px-4 md:px-6">
+        <div
+            class="max-w-6xl mx-auto bg-white/80 backdrop-blur-md rounded-full px-6 py-3 flex justify-between items-center shadow-clay-card border border-white/50">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 rounded-2xl bg-brand-primary flex items-center justify-center text-white font-extrabold text-xl shadow-clay-btn">
+                    P</div>
+                <span class="font-bold text-brand-dark text-lg hidden md:block tracking-tight">PORTFOLIO</span>
+            </div>
+            <div class="hidden md:flex gap-6 text-sm font-bold text-brand-gray uppercase tracking-wide">
+                <a href="index.html" class="hover:text-brand-primary transition">Home</a>
+                <a href="about.html" class="hover:text-brand-primary transition">About</a>
+                <a href="education.html" class="hover:text-brand-primary transition">Education</a>
+                <a href="experience.html" class="hover:text-brand-primary transition">Experience</a>
+                <a href="skill.html" class="hover:text-brand-primary transition">Skill</a>
+                <a href="projects.html" class="hover:text-brand-primary transition">Projects</a>
+                <a href="blog.html" class="text-brand-primary transition">Blog</a>
+            </div>
+            <button class="md:hidden text-brand-primary font-bold">MENU</button>
+        </div>
+    </nav>
+
+    <main class="max-w-3xl mx-auto pt-40 pb-20 px-6 w-full">
+        <a href="blog.html"
+            class="inline-flex items-center gap-2 font-bold text-brand-primary mb-8 hover:gap-3 transition-all">&larr;
+            Kembali ke Blog</a>
+
+        <div class="bg-white p-8 md:p-12 rounded-[50px] shadow-clay-card border border-white/60">
+            <div class="flex gap-2 mb-6">
+                <span
+                    class="px-3 py-1 rounded-full bg-emerald-100 text-brand-primary text-xs font-extrabold uppercase">DEVOPS</span>
+                <span
+                    class="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-xs font-extrabold uppercase">JENKINS</span>
+            </div>
+
+            <h1 class="text-3xl md:text-5xl font-extrabold text-brand-dark leading-tight mb-6">
+                Cara Setup CI/CD Pipeline Jenkins untuk Project Laravel
+            </h1>
+
+            <div class="flex items-center gap-3 mb-8 border-b border-gray-100 pb-8">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio"
+                    class="w-10 h-10 rounded-full bg-emerald-50 border border-emerald-100">
+                <div>
+                    <p class="text-sm font-bold text-brand-dark">Portfolio</p>
+                    <p class="text-xs text-brand-gray">14 Jan 2026</p>
+                </div>
+            </div>
+
+            <article>
+                <p>
+                    Deployment manual itu melelahkan. Bayangkan setiap kali ada update kecil di backend Laravel, kita
+                    harus login SSH, `git pull`, jalankan migrasi, dan restart service. Di artikel ini, saya akan
+                    berbagi pengalaman setup <strong>Jenkins</strong> untuk mengotomatisasi proses tersebut.
+                </p>
+
+                <h2>1. Persiapan Server</h2>
+                <p>
+                    Pastikan server VPS (saya pakai Ubuntu 22.04) sudah terinstall Java, karena Jenkins berjalan di atas
+                    Java Runtime Environment (JRE).
+                </p>
+                <pre>
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+</pre>
+
+                <h2>2. Install Jenkins</h2>
+                <p>
+                    Selanjutnya, kita tambahkan repository Jenkins ke sistem dan lakukan instalasi.
+                </p>
+                <pre>
+sudo apt-get install jenkins
+sudo systemctl start jenkins
+</pre>
+            </article>
+
+            <div class="mt-8 pt-8 border-t border-gray-100">
+                <p class="font-bold text-brand-dark mb-4">Bagikan Artikel:</p>
+                <div class="flex gap-4">
+                    <button
+                        class="px-6 py-2 rounded-full bg-white text-brand-primary font-bold text-sm shadow-clay-btn hover:scale-105 active:scale-95 transition">Instagram</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-white text-brand-primary font-bold text-sm shadow-clay-btn hover:scale-105 active:scale-95 transition">GitHub</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
