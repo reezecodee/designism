@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 pb-12">
+        <h1 class="text-4xl font-bold mb-10 text-center text-gray-700 text-engraved uppercase">Latest Writing</h1>
+
+        <div class="flex flex-col gap-6">
+            <a href="detail-blog.html"
+                class="block bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 hover:shadow-pressed active:translate-y-1 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-3">
+                    <h3 class="text-2xl font-bold text-gray-700 group-hover:text-skeuo-accent transition-colors">Setup
+                        CI/CD Jenkins untuk Laravel</h3>
+                    <span class="text-xs font-bold text-gray-400 bg-skeuo-bg shadow-inner px-3 py-1 rounded-full">14 JAN
+                        2026</span>
+                </div>
+                <p class="text-gray-600">Catatan belajar saya saat mencoba mengotomatisasi deployment backend app dengan
+                    Jenkins.</p>
+            </a>
+
+            <a href="#"
+                class="block bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 hover:shadow-pressed active:translate-y-1 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-3">
+                    <h3 class="text-2xl font-bold text-gray-700 group-hover:text-skeuo-accent transition-colors">Deploy
+                        Gratis di Render.com</h3>
+                    <span class="text-xs font-bold text-gray-400 bg-skeuo-bg shadow-inner px-3 py-1 rounded-full">11 JAN
+                        2026</span>
+                </div>
+                <p class="text-gray-600">Tutorial lengkap deploy Laravel + PostgreSQL tanpa biaya server menggunakan
+                    Render.</p>
+            </a>
+
+            <a href="#"
+                class="block bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 hover:shadow-pressed active:translate-y-1 transition-all group">
+                <div class="flex flex-col md:flex-row justify-between md:items-center gap-2 mb-3">
+                    <h3 class="text-2xl font-bold text-gray-700 group-hover:text-skeuo-accent transition-colors">
+                        Pengantar Linear Regression</h3>
+                    <span class="text-xs font-bold text-gray-400 bg-skeuo-bg shadow-inner px-3 py-1 rounded-full">20 DEC
+                        2025</span>
+                </div>
+                <p class="text-gray-600">Mencoba memahami dasar Machine Learning menggunakan Python dan Pandas.</p>
+            </a>
+        </div>
+    </main>
+</body>
+
+</html>

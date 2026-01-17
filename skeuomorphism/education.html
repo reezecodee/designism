@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 pb-12">
+        <h1 class="text-4xl font-bold mb-10 text-center text-gray-700 text-engraved uppercase">Riwayat Pendidikan</h1>
+
+        <div class="space-y-8">
+            <div
+                class="bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 relative group hover:shadow-pressed transition-all duration-300">
+                <div
+                    class="absolute -left-3 top-8 w-6 h-6 rounded-full shadow-inner bg-skeuo-bg border border-white/20 flex items-center justify-center">
+                    <div class="w-2 h-2 rounded-full bg-skeuo-accent shadow-[0_0_5px_rgba(5,150,105,0.8)]"></div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <span
+                        class="px-4 py-1 rounded-full shadow-inner text-xs font-bold text-skeuo-accent bg-skeuo-bg">2023
+                        - Sekarang</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-700">Universitas BSI</h2>
+                <p class="text-lg font-semibold text-gray-500 mb-4">S1 - Teknologi Informasi</p>
+                <p class="text-gray-600 leading-relaxed">Saat ini Semester 5. Aktif dalam kegiatan himpunan dan asisten
+                    lab. Fokus studi pada Software Engineering dan Data Science.</p>
+            </div>
+
+            <div
+                class="bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 relative group hover:shadow-pressed transition-all duration-300">
+                <div
+                    class="absolute -left-3 top-8 w-6 h-6 rounded-full shadow-inner bg-skeuo-bg border border-white/20 flex items-center justify-center">
+                    <div class="w-2 h-2 rounded-full bg-gray-400"></div>
+                </div>
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                    <span class="px-4 py-1 rounded-full shadow-inner text-xs font-bold text-gray-500 bg-skeuo-bg">2020 -
+                        2023</span>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-700">SMA Negeri 1 Ciamis</h2>
+                <p class="text-lg font-semibold text-gray-500">Jurusan IPA</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

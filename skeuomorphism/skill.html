@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 pb-12">
+        <h1 class="text-4xl font-bold mb-10 text-center text-gray-700 text-engraved uppercase">Tech Stack</h1>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-skeuo-accent transition-colors">PHP</h3>
+                <p class="text-sm mt-3 text-gray-500">Laravel, Native</p>
+            </div>
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-blue-500 transition-colors">DART</h3>
+                <p class="text-sm mt-3 text-gray-500">Flutter Mobile</p>
+            </div>
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-yellow-600 transition-colors">PYTHON</h3>
+                <p class="text-sm mt-3 text-gray-500">Pandas, Scikit-Learn</p>
+            </div>
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-purple-600 transition-colors">DATABASE
+                </h3>
+                <p class="text-sm mt-3 text-gray-500">PostgreSQL, MySQL</p>
+            </div>
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-red-500 transition-colors">DEVOPS</h3>
+                <p class="text-sm mt-3 text-gray-500">Docker, Jenkins</p>
+            </div>
+
+            <div
+                class="group bg-skeuo-bg border border-white/40 p-8 rounded-3xl shadow-outer hover:shadow-pressed transition-all duration-200 cursor-default">
+                <h3 class="text-2xl font-black text-gray-700 group-hover:text-gray-900 transition-colors">TOOLS</h3>
+                <p class="text-sm mt-3 text-gray-500">Git, Linux, VSCode</p>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

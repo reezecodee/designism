@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                        'skeuo-accent-hover': '#047857',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+            min-height: 100vh;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 pb-12 flex flex-col md:flex-row gap-12 items-center">
+        <div class="w-full md:w-1/3">
+            <div class="bg-skeuo-bg p-4 rounded-3xl shadow-outer border border-white/20">
+                <div class="rounded-2xl shadow-inner overflow-hidden border border-black/5">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio&backgroundColor=e0e5ec"
+                        alt="Profile" class="w-full h-auto bg-skeuo-bg">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full md:w-2/3">
+            <h1 class="text-4xl font-bold mb-6 text-gray-700 text-engraved uppercase">Tentang Saya</h1>
+            <div class="bg-skeuo-bg rounded-2xl shadow-outer p-8 border border-white/40">
+                <p class="text-lg leading-relaxed mb-6 font-medium text-gray-600">
+                    Hai! Nama saya <strong class="text-skeuo-accent">Portfolio</strong>. Saya adalah mahasiswa semester
+                    5 di Universitas BSI jurusan Teknologi Informasi.
+                    <br><br>
+                    Ketertarikan utama saya ada pada <em class="text-skeuo-accent not-italic">Backend Development</em>
+                    dan infrastruktur <em class="text-skeuo-accent not-italic">DevOps</em>. Saya menikmati proses
+                    merancang API yang efisien, mengelola database, dan memastikan server berjalan lancar. Saat ini saya
+                    juga sedang mempelajari Machine Learning.
+                </p>
+                <div class="flex gap-6 mt-8">
+                    <a href="#"
+                        class="px-6 py-3 rounded-xl bg-skeuo-bg shadow-outer font-bold text-skeuo-accent hover:text-skeuo-accent-hover hover:shadow-pressed active:translate-y-1 transition-all">DOWNLOAD
+                        CV</a>
+                    <a href="#"
+                        class="px-6 py-3 rounded-xl bg-skeuo-bg shadow-outer font-bold text-gray-600 hover:text-gray-800 hover:shadow-pressed active:translate-y-1 transition-all">CONTACT
+                        ME</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

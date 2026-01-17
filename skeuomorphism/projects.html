@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 pb-12">
+        <h1 class="text-4xl font-bold mb-10 text-center text-gray-700 text-engraved uppercase">Selected Works</h1>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-skeuo-bg rounded-3xl shadow-outer p-4 border border-white/40">
+                <div class="h-48 rounded-xl shadow-inner overflow-hidden mb-6 relative border border-black/5">
+                    <img src="https://placehold.co/600x400/059669/ffffff/png?text=GIS+Desa" alt="GIS"
+                        class="w-full h-full object-cover opacity-90">
+                    <div
+                        class="absolute bottom-2 right-2 px-2 py-1 bg-skeuo-bg/90 rounded-md text-xs font-bold shadow-outer backdrop-blur-sm text-skeuo-accent">
+                        LARAVEL</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">GIS Desa Kaputihan</h3>
+                    <p class="text-sm mb-6 text-gray-500">Sistem pemetaan potensi desa & administrasi kependudukan.</p>
+                    <a href="#"
+                        class="block w-full py-3 rounded-xl bg-skeuo-bg shadow-outer text-center font-bold text-gray-600 hover:text-skeuo-accent hover:shadow-pressed active:translate-y-1 transition-all">VIEW
+                        DETAILS</a>
+                </div>
+            </article>
+
+            <article class="bg-skeuo-bg rounded-3xl shadow-outer p-4 border border-white/40">
+                <div class="h-48 rounded-xl shadow-inner overflow-hidden mb-6 relative border border-black/5">
+                    <img src="https://placehold.co/600x400/4a5568/ffffff/png?text=Internal+App" alt="Internal"
+                        class="w-full h-full object-cover opacity-90">
+                    <div
+                        class="absolute bottom-2 right-2 px-2 py-1 bg-skeuo-bg/90 rounded-md text-xs font-bold shadow-outer backdrop-blur-sm text-blue-500">
+                        FLUTTER</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Diskominfo Internal</h3>
+                    <p class="text-sm mb-6 text-gray-500">Aplikasi mobile manajemen tugas pegawai honorer/kontrak.</p>
+                    <a href="#"
+                        class="block w-full py-3 rounded-xl bg-skeuo-bg shadow-outer text-center font-bold text-gray-600 hover:text-skeuo-accent hover:shadow-pressed active:translate-y-1 transition-all">VIEW
+                        DETAILS</a>
+                </div>
+            </article>
+
+            <article class="bg-skeuo-bg rounded-3xl shadow-outer p-4 border border-white/40">
+                <div class="h-48 rounded-xl shadow-inner overflow-hidden mb-6 relative border border-black/5">
+                    <img src="https://placehold.co/600x400/a3b1c6/4a5568/png?text=ML+Model" alt="ML"
+                        class="w-full h-full object-cover opacity-90">
+                    <div
+                        class="absolute bottom-2 right-2 px-2 py-1 bg-skeuo-bg/90 rounded-md text-xs font-bold shadow-outer backdrop-blur-sm text-yellow-600">
+                        PYTHON</div>
+                </div>
+                <div class="px-2 pb-2">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Prediction Model</h3>
+                    <p class="text-sm mb-6 text-gray-500">Linear Regression Model untuk analisis dataset Kaggle.</p>
+                    <a href="#"
+                        class="block w-full py-3 rounded-xl bg-skeuo-bg shadow-outer text-center font-bold text-gray-600 hover:text-skeuo-accent hover:shadow-pressed active:translate-y-1 transition-all">VIEW
+                        DETAILS</a>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+
+</html>

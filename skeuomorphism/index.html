@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec', /* Kembali ke abu-abu netral */
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        /* Warna Aksen Baru: Emerald Green */
+                        'skeuo-accent': '#059669',
+                        'skeuo-accent-hover': '#047857',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+            background-image: radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.5) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(163, 177, 198, 0.3) 0px, transparent 50%);
+            min-height: 100vh;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans flex flex-col min-h-screen">
+
+    <nav class="sticky top-4 z-50 px-4">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black tracking-tight text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">
+                PORTFOLIO
+            </a>
+
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent transition-all hover:shadow-outer active:shadow-pressed active:translate-y-[1px]">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-6 text-center">
+        <div class="max-w-4xl w-full">
+
+            <div class="inline-block rounded-full shadow-inner bg-skeuo-bg border border-white/20 px-6 py-2 mb-8">
+                <span class="text-skeuo-accent font-bold tracking-widest text-sm text-engraved">PORTFOLIO 2026</span>
+            </div>
+
+            <div class="relative mb-8">
+                <h1 class="text-5xl md:text-8xl font-black leading-none text-gray-700 drop-shadow-lg">
+                    BACKEND<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-br from-emerald-500 to-emerald-700"
+                        style="filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));">
+                        DEVELOPER
+                    </span>
+                </h1>
+            </div>
+
+            <p class="text-lg md:text-2xl font-medium mb-12 max-w-2xl mx-auto text-gray-600 leading-relaxed">
+                Halo, saya Portfolio. Mahasiswa Universitas BSI & Tech Enthusiast.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-8">
+                <a href="about.html"
+                    class="group relative px-8 py-4 rounded-2xl bg-skeuo-bg shadow-outer transition-all active:shadow-pressed active:translate-y-1">
+                    <span class="text-xl font-bold text-skeuo-accent group-hover:text-skeuo-accent-hover">TENTANG
+                        SAYA</span>
+                </a>
+
+                <a href="projects.html"
+                    class="group relative px-8 py-4 rounded-2xl bg-skeuo-bg shadow-outer transition-all active:shadow-pressed active:translate-y-1">
+                    <span class="text-xl font-bold text-gray-700 group-hover:text-gray-900">LIHAT KARYA</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

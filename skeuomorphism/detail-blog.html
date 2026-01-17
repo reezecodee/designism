@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Jenkins untuk Laravel - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'skeuo-bg': '#e0e5ec',
+                        'skeuo-light': '#ffffff',
+                        'skeuo-shadow': '#a3b1c6',
+                        'skeuo-text': '#4a5568',
+                        'skeuo-accent': '#059669',
+                    },
+                    boxShadow: {
+                        'outer': '9px 9px 16px rgb(163,177,198,0.6), -9px -9px 16px rgba(255,255,255, 0.5)',
+                        'inner': 'inset 6px 6px 10px 0 rgba(163,177,198, 0.7), inset -6px -6px 10px 0 rgba(255,255,255, 0.8)',
+                        'pressed': 'inset 4px 4px 8px rgba(163,177,198, 0.7), inset -4px -4px 8px rgba(255,255,255, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #e0e5ec;
+        }
+
+        .text-engraved {
+            text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.8), -1px -1px 0px rgba(163, 177, 198, 0.3);
+        }
+
+        /* Styling Artikel */
+        .article-content h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #374151;
+        }
+
+        .article-content p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #4b5563;
+        }
+
+        /* Box code dibuat 'tenggelam' (inner shadow) dengan background gelap */
+        .article-content pre {
+            background: #2d3748;
+            color: #10b981;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: inset 6px 6px 10px 0 rgba(0, 0, 0, 0.3), inset -6px -6px 10px 0 rgba(255, 255, 255, 0.05);
+            overflow-x: auto;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+
+<body class="text-skeuo-text font-sans">
+
+    <nav class="sticky top-4 z-50 px-4 mb-12">
+        <div
+            class="max-w-7xl mx-auto bg-skeuo-bg rounded-2xl shadow-outer px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 border border-white/40">
+            <a href="index.html"
+                class="text-2xl font-black text-gray-700 text-engraved hover:text-skeuo-accent transition-colors">PORTFOLIO</a>
+            <div class="flex flex-wrap justify-center gap-3 text-sm font-bold uppercase">
+                <a href="about.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">About</a>
+                <a href="education.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Education</a>
+                <a href="experience.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Experience</a>
+                <a href="skill.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Skill</a>
+                <a href="projects.html"
+                    class="px-4 py-2 rounded-xl text-gray-600 hover:text-skeuo-accent hover:shadow-outer active:shadow-pressed transition-all">Project</a>
+                <a href="blog.html"
+                    class="px-4 py-2 rounded-xl text-skeuo-accent shadow-pressed translate-y-[1px]">Blog</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 pb-12">
+
+        <a href="blog.html" class="inline-flex items-center font-bold text-gray-600 hover:text-skeuo-accent mb-8 group">
+            <span
+                class="w-10 h-10 rounded-full bg-skeuo-bg shadow-outer flex items-center justify-center mr-3 group-hover:shadow-pressed transition-all">
+                &larr;
+            </span>
+            KEMBALI
+        </a>
+
+        <article class="bg-skeuo-bg rounded-3xl shadow-outer p-8 md:p-12 border border-white/40">
+            <header class="mb-10 border-b border-gray-300 pb-10">
+                <div class="flex gap-3 mb-4">
+                    <span
+                        class="bg-skeuo-bg shadow-inner text-skeuo-accent px-3 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">DEVOPS</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black leading-tight mb-6 text-gray-800">
+                    Cara Setup CI/CD Pipeline Jenkins untuk Project Laravel
+                </h1>
+                <div class="flex items-center gap-4 text-sm font-bold text-gray-500">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full shadow-outer overflow-hidden">
+                            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio&backgroundColor=e0e5ec"
+                                alt="Portfolio">
+                        </div>
+                        <span>Portfolio</span>
+                    </div>
+                    <span>|</span>
+                    <span>14 JAN 2026</span>
+                </div>
+            </header>
+
+            <div class="article-content">
+                <p>
+                    Deployment manual itu melelahkan. Bayangkan setiap kali ada update kecil di backend Laravel, kita
+                    harus login SSH, `git pull`, jalankan migrasi, dan restart service. Di artikel ini, saya akan
+                    berbagi pengalaman setup <strong>Jenkins</strong> untuk mengotomatisasi proses tersebut.
+                </p>
+
+                <h2>1. Persiapan Server</h2>
+                <p>
+                    Pastikan server VPS (saya pakai Ubuntu 22.04) sudah terinstall Java, karena Jenkins berjalan di atas
+                    Java Runtime Environment (JRE).
+                </p>
+                <pre>
+sudo apt update
+sudo apt install fontconfig openjdk-17-jre
+java -version
+</pre>
+
+                <h2>2. Install Jenkins</h2>
+                <p>
+                    Selanjutnya, kita tambahkan repository Jenkins ke sistem dan lakukan instalasi. Jangan lupa untuk
+                    membuka port 8080 di firewall jika belum dibuka.
+                </p>
+                <pre>
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+  
+sudo apt-get install jenkins
+sudo systemctl start jenkins
+</pre>
+
+                <h2>3. Konfigurasi Pipeline</h2>
+                <p>
+                    Di dashboard Jenkins, buat "New Item" > "Pipeline". Di bagian konfigurasi script, kita bisa
+                    menggunakan <code>Jenkinsfile</code>. Berikut adalah contoh script sederhana untuk Laravel:
+                </p>
+
+                <div
+                    class="bg-skeuo-bg border-l-4 border-skeuo-accent p-4 mb-6 rounded-r-lg shadow-inner italic text-gray-600">
+                    <strong>Catatan:</strong> Pastikan Anda sudah mengatur SSH Credentials di Jenkins agar bisa connect
+                    ke server production.
+                </div>
+
+                <pre>
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'composer install --no-dev'
+                sh 'cp .env.example .env'
+                sh 'php artisan key:generate'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh './vendor/bin/phpunit'
+            }
+        }
+    }
+}
+</pre>
+
+                <h2>Kesimpulan</h2>
+                <p>
+                    Dengan setup ini, setiap kali saya push code ke GitHub, Jenkins akan otomatis menjalankan test. Jika
+                    lolos, code siap dideploy. Ini menghemat waktu saya sekitar 15-20 menit per deployment.
+                </p>
+                <p>
+                    Next, saya akan bahas cara setup Webhook agar trigger-nya otomatis!
+                </p>
+            </div>
+        </article>
+
+        <div
+            class="mt-12 bg-skeuo-bg rounded-3xl shadow-outer p-8 border border-white/40 flex flex-col md:flex-row gap-6 items-center">
+            <div class="w-24 h-24 rounded-full shadow-inner overflow-hidden flex-shrink-0 border border-white/50">
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Portfolio&backgroundColor=e0e5ec"
+                    alt="Portfolio" class="w-full h-full object-cover">
+            </div>
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold uppercase mb-2 text-gray-700">Ditulis oleh Portfolio</h3>
+                <p class="font-medium mb-4 text-gray-500 text-sm">Mahasiswa BSI & Backend Enthusiast yang sedang belajar
+                    DevOps. Suka kopi dan coding di malam hari.</p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#" class="text-skeuo-accent font-bold hover:underline">Instagram</a>
+                    <a href="#" class="text-skeuo-accent font-bold hover:underline">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
