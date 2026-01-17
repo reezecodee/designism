@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Grids - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-slate-800 p-4 md:p-10 min-h-screen">
+
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 grid-flow-dense">
+
+        <div
+            class="md:col-span-2 md:row-span-2 bg-white rounded-3xl p-8 border border-gray-200 shadow-sm flex flex-col justify-between relative overflow-hidden min-h-[350px]">
+            <div class="z-10">
+                <div class="flex items-center gap-4 mb-6">
+                    <div
+                        class="w-16 h-16 bg-slate-900 text-white rounded-full flex items-center justify-center text-2xl font-bold">
+                        A</div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-slate-900">Portfolio</h1>
+                        <p class="text-slate-500">Full Stack Developer</p>
+                    </div>
+                </div>
+                <p class="text-slate-600 text-lg leading-relaxed mb-6">
+                    Saya seorang pengembang web yang fokus pada performa dan desain minimalis. Mari mengubah ide menjadi
+                    produk digital yang nyata.
+                </p>
+                <div class="flex gap-3">
+                    <a href="#"
+                        class="bg-slate-900 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-700 transition">Contact
+                        Me</a>
+                    <a href="#"
+                        class="bg-gray-100 text-slate-900 px-6 py-3 rounded-xl font-semibold hover:bg-gray-200 transition">CV</a>
+                </div>
+            </div>
+            <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 -z-0 translate-x-1/3 -translate-y-1/3">
+            </div>
+        </div>
+
+        <div
+            class="md:col-span-1 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm flex flex-col justify-center gap-4 min-h-[160px]">
+            <h3 class="font-bold text-gray-400 text-xs uppercase tracking-wider">Connect</h3>
+            <div class="flex gap-2">
+                <a href="#"
+                    class="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center hover:scale-110 transition"><svg
+                        class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg></a>
+                <a href="#"
+                    class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center hover:scale-110 transition"><svg
+                        class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+                    </svg></a>
+            </div>
+        </div>
+
+        <div
+            class="md:col-span-1 bg-slate-900 rounded-3xl p-6 border border-slate-800 shadow-sm flex flex-col justify-center text-white min-h-[160px]">
+            <div class="flex items-center gap-2 mb-2 text-green-400">
+                <span class="relative flex h-3 w-3">
+                    <span
+                        class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span class="text-xs font-bold uppercase">Based In</span>
+            </div>
+            <p class="text-xl font-bold">Jakarta, ID</p>
+        </div>
+
+        <div class="md:col-span-1 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm min-h-[160px]">
+            <h3 class="font-bold text-gray-900 mb-4">Tech Stack</h3>
+            <div class="flex flex-wrap gap-2">
+                <span class="bg-gray-100 px-3 py-1 rounded-md text-sm text-gray-700">HTML</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-md text-sm text-gray-700">CSS</span>
+                <span class="bg-blue-100 px-3 py-1 rounded-md text-sm text-blue-700 font-medium">React</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-md text-sm text-gray-700">NodeJS</span>
+                <span class="bg-gray-100 px-3 py-1 rounded-md text-sm text-gray-700">Figma</span>
+            </div>
+        </div>
+
+        <div
+            class="md:col-span-1 md:row-span-2 bg-white rounded-3xl p-6 border border-gray-200 shadow-sm flex flex-col min-h-[350px]">
+            <h3 class="font-bold text-xl mb-6">Experience</h3>
+            <div class="space-y-6 overflow-y-auto max-h-[400px]">
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <h4 class="font-bold text-sm">Senior Dev</h4>
+                    <p class="text-xs text-gray-500">Tech Co • 2023-Present</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <h4 class="font-bold text-sm">Web Designer</h4>
+                    <p class="text-xs text-gray-500">Agency X • 2021-2023</p>
+                </div>
+                <div class="border-l-2 border-gray-200 pl-4">
+                    <h4 class="font-bold text-sm">Freelance</h4>
+                    <p class="text-xs text-gray-500">Self Employed • 2019-2021</p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="md:col-span-2 bg-indigo-600 rounded-3xl p-8 text-white relative overflow-hidden group min-h-[250px] flex flex-col justify-center">
+            <div class="relative z-10">
+                <span
+                    class="bg-white/20 px-2 py-1 rounded text-xs font-bold uppercase mb-2 inline-block">Featured</span>
+                <h3 class="text-3xl font-bold mb-2">E-Commerce App</h3>
+                <p class="text-indigo-200 mb-6 max-w-sm">Aplikasi manajemen toko online dengan fitur analitik real-time.
+                </p>
+                <a href="#" class="inline-flex items-center gap-2 font-semibold hover:gap-4 transition-all">
+                    Lihat Project <span>→</span>
+                </a>
+            </div>
+            <div
+                class="absolute -right-10 -bottom-10 w-48 h-48 bg-white/10 rounded-full group-hover:scale-150 transition-transform duration-700">
+            </div>
+        </div>
+
+        <div
+            class="md:col-span-1 bg-orange-50 rounded-3xl p-6 border border-orange-100 shadow-sm flex flex-col justify-center min-h-[160px]">
+            <h3 class="text-orange-800 font-bold text-lg">Education</h3>
+            <p class="text-gray-800 font-medium mt-2">S1 Informatika</p>
+            <p class="text-gray-500 text-sm">Universitas Teknologi</p>
+            <p class="text-gray-400 text-xs mt-1">Lulus 2024</p>
+        </div>
+
+        <div class="md:col-span-4 bg-white rounded-3xl p-8 border border-gray-200 shadow-sm">
+            <h3 class="text-xl font-bold mb-6">Latest Articles</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <article class="group cursor-pointer">
+                    <div class="h-40 bg-gray-200 rounded-xl mb-3 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Blog 1">
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-blue-600 transition">Belajar Tailwind CSS</h4>
+                    <p class="text-gray-500 text-sm mt-1">Panduan pemula untuk utility-first CSS.</p>
+                </article>
+                <article class="group cursor-pointer">
+                    <div class="h-40 bg-gray-200 rounded-xl mb-3 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Blog 2">
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-blue-600 transition">Tips Coding Bersih</h4>
+                    <p class="text-gray-500 text-sm mt-1">Cara menulis kode yang mudah dibaca.</p>
+                </article>
+                <article class="group cursor-pointer">
+                    <div class="h-40 bg-gray-200 rounded-xl mb-3 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            alt="Blog 3">
+                    </div>
+                    <h4 class="font-bold text-lg group-hover:text-blue-600 transition">Karir Developer 2025</h4>
+                    <p class="text-gray-500 text-sm mt-1">Tren teknologi yang harus kamu kuasai.</p>
+                </article>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
